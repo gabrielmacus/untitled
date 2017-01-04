@@ -1,0 +1,9 @@
+{
+  "db":{
+    "name":"db",
+    "port":27017,
+    "address":"localhost"
+  },
+  "name":"untitled",
+  "version":0.1
+}
