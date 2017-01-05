@@ -16,7 +16,7 @@ include("includes/framework/db/conector.php");
 
 include("includes/framework/classes/Data.php");
 
-include("includes/datasite/classes/Usuario.php");
+include("includes/datasite/classes/Cliente.php");
 
 include("includes/framework/Mustache/Autoloader.php");
 Mustache_Autoloader::register();

@@ -1,20 +1,20 @@
 <?php
 
 include ("includes/autoload.php");
-$data = new Usuario($_POST,$_GET,$db);
 
-echo $mustache->render(readTemplate("home/index.html"),array(
-    "usuarios"=>array(0=>array(
-        "nombre"=>"gabriel"
-    ),
-        1=>array(
-            "nombre"=>"robertto"
-        )
+
+$rsClientes = new Cliente($_POST,$_GET,$db);
+$cliente=$rsClientes->getObject();
 
 
 
-    )
+if($cliente['success'])
+{
+    echo $mustache->render(readTemplate("clientes/list.html"),array("clientes"=>$cliente["info"]));
 
-
-));
+}
+else
+{
+    echo "ERROR";
+}
 

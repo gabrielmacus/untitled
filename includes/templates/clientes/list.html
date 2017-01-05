@@ -1,0 +1,56 @@
+
+
+
+
+ <table>
+     <thead>
+       <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Direccion/es</th>
+        <th>Telefono/s</th>
+       </tr>
+     </thead>
+
+     <tbody>
+     {{#clientes}}
+       <tr>
+           <td>{{nombre}}</td>
+           <td>{{apellido}}</td>
+           <td>
+               <select>
+                   {{#direcciones}}
+                   <option>{{calle}} {{numero}}</option>
+
+                   {{/direcciones}}
+
+                   {{^direcciones}}
+                   <option>-</option>
+                   {{/direcciones}}
+               </select>
+
+           </td>
+
+           <td>
+               <select>
+                   {{#telefonos}}
+                   <option>{{numero}}</option>
+
+                   {{/telefonos}}
+
+                   {{^telefonos}}
+                   <option>-</option>
+                   {{/telefonos}}
+               </select>
+
+           </td>
+       </tr>
+     {{/clientes}}
+     </tbody>
+ </table>
+
+
+
+{{^clientes}}
+ <h3>No hay clientes disponibles</h3>
+{{/clientes}}
