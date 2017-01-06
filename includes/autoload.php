@@ -14,11 +14,13 @@ include("includes/framework/db/conector.php");
 
 /** Clases **/
 
+/*
 include("includes/framework/classes/Data.php");
 
 include("includes/datasite/classes/Cliente.php");
-
+*/
 include("includes/framework/Mustache/Autoloader.php");
+
 Mustache_Autoloader::register();
 $mustache = new Mustache_Engine();
 
