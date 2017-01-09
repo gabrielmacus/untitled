@@ -6,7 +6,7 @@
  * Time: 13:46
  */
 
-function isInvalidData()
+function isInvalidData($data)
 {
     return false;
 }
@@ -71,7 +71,9 @@ if($result["info"]=isInvalidData($data))
                 break;
             case 'edit':
 
-                if($opResult=$collection->update(array("_id"=>new MongoId($id)),array('$set' => $data)))
+                $data["_id"]=new MongoId($id);
+
+                if($opResult=$collection->save($data))
                 {
                     $result["success"]=true;
                 }
